@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @want.user_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @want.category_id %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @want.order %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @want.name %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @want.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @want.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_want_path(@want) %> |
+<%= link_to 'Back', wants_path %>

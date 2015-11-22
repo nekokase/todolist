@@ -1,0 +1,222 @@
+<%= form_for(@category, data: {remote: true}) do |f| %>
+    <% if @category.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+          <ul>
+            <% @category.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :user_id %><br>
+      <%= f.text_field :user_id %>
+    </div>
+    <div class="field">
+      <%= f.label :order %><br>
+      <%= f.text_field :order %>
+    </div>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :color %><br>
+      <%= f.text_field :color %>
+    </div>
+
+    <div class="wants">
+      <%= f.fields_for :wants do |want| %>
+          <div class="field">
+            <%= want.label :user_id %><br>
+            <%= want.number_field :user_id %>
+          </div>
+          <div class="field">
+            <%= want.label :category_id %><br>
+            <%= want.number_field :category_id %>
+          </div>
+          <div class="field">
+            <%= want.label :order %><br>
+            <%= want.number_field :order %>
+          </div>
+          <div class="field">
+            <%= want.label :name %><br>
+            <%= want.text_field :name %>
+          </div>
+          <div class="field">
+            <%= want.label :start_date %><br>
+            <%= want.date_select :start_date %>
+          </div>
+          <div class="field">
+            <%= want.label :end_date %><br>
+            <%= want.date_select :end_date %>
+          </div>
+          <div class="button" id="addWantButton" style="height:100px;width:100px;background-color: #ff8084">
+          </div>
+      <% end %>
+    </div>
+
+    </div>
+    <div class="button" id="addWantButton" style="height:100px;width:100px;background-color: #ff8084">
+    </div>
+
+    <div class="field">
+      <label for="category_wants_attributes_1_user_id">User</label><br>
+      <input type="number" name="category[wants_attributes][1][user_id]" id="category_wants_attributes_1_user_id">
+    </div>
+    <div class="field">
+      <label for="category_wants_attributes_1_category_id">Category</label><br>
+      <input type="number" name="category[wants_attributes][1][category_id]" id="category_wants_attributes_1_category_id">
+    </div>
+    <div class="field">
+      <label for="category_wants_attributes_1_order">Order</label><br>
+      <input type="number" name="category[wants_attributes][1][order]" id="category_wants_attributes_1_order">
+    </div>
+    <div class="field">
+      <label for="category_wants_attributes_1_name">Name</label><br>
+      <input type="text" name="category[wants_attributes][1][name]" id="category_wants_attributes_1_name">
+    </div>
+    <div class="field">
+      <label for="category_wants_attributes_1_start_date">Start date</label><br>
+      <select id="category_wants_attributes_1_start_date_1i" name="category[wants_attributes][1][start_date(1i)]">
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015" selected="selected">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+      </select>
+      <select id="category_wants_attributes_1_start_date_2i" name="category[wants_attributes][1][start_date(2i)]">
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11" selected="selected">November</option>
+        <option value="12">December</option>
+      </select>
+      <select id="category_wants_attributes_1_start_date_3i" name="category[wants_attributes][1][start_date(3i)]">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15" selected="selected">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+
+    </div>
+    <div class="field">
+      <label for="category_wants_attributes_1_end_date">End date</label><br>
+      <select id="category_wants_attributes_1_end_date_1i" name="category[wants_attributes][1][end_date(1i)]">
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015" selected="selected">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+      </select>
+      <select id="category_wants_attributes_1_end_date_2i" name="category[wants_attributes][1][end_date(2i)]">
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11" selected="selected">November</option>
+        <option value="12">December</option>
+      </select>
+      <select id="category_wants_attributes_1_end_date_3i" name="category[wants_attributes][1][end_date(3i)]">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15" selected="selected">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+
+    </div>
+    <div class="button" id="addWantButton" style="height:100px;width:100px;background-color: #ff8084">
+    </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+
+<script type="text/javascript">
+
+</script>
